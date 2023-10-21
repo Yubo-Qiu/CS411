@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import FirebaseLogin from '../components/FirebaseLogin.jsx';
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title="Daddy's Stock">
+  <Navbar />
+
+  <main>
+    <section class="intro">
+      <h1>Welcome to <span class="highlight">Daddy's Stock</span>! 😈</h1>
+      <p>
+        Dive into the universe through Astro Blog, where we explore the wonders of space, 
+        unravel the mysteries of the cosmos, and share insights on the latest astronomical 
+        discoveries. Whether you're a seasoned astronomer or just starting out, 
+        there's something here for everyone. Join us on this stellar journey bnbnbnbnbnbnbb
+        bnbnbnbnbnbnbnbn bnbnbnn!
+      </p>
+      <button class="blue-button">Let's Go 💫</button>
+    </section>
+
+    <section class="full-width-image-section">
+        <img src="/back.png" alt="Descriptive Image Text" />
+    </section>
+
+  </main>
+
+
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Main Content Styles */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #e6e6e6;
+  }
+  
+  .intro {
+    max-width: 1200px;
+    margin-bottom: 3rem;
+  }
+
+  .full-width-image-section img {
+    width: 100%;      
+    max-width: 1100px; 
+    height: auto;     
+    display: block;   
+    margin: 0 auto;   
+  }
+
+  .highlight {
+  color: #1478ee;
+  }
+
+  .highlight2 {
+  color: #000000;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+  }
+  
+  p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .featured-post, .recent-posts {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  article {
+    margin-bottom: 2rem;
+  }
+
+  .blue-button {
+  background-color: #1e40af; 
+  color: #fff; 
+  padding: 17px 38px; 
+  font-size: 1.9rem; 
+  border: none; 
+  border-radius: 45px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  font-weight: bold;
+  margin-top: 20px;
+  }
+
+  .blue-button:hover {
+  background-color: #1b199c; /* Slightly darker blue on hover */
+  }
+</style>
+
+  

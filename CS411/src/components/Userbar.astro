@@ -1,39 +1,115 @@
 <!-- Sidebar Component (Sidebar.astro) -->
 <aside class="sidebar">
-	<ul>
-	</ul>
+    <div class="profile-container">
+      <img src="icon.png" alt="Profile Image" class="profile-image">
+    </div>
+    <div class="username">User Name</div>
+    <div class="info">
+        <p class="info-line">Deposit:</p>
+        <p class="info-line">Friends:</p>
+        <div class="friends">
+          <div class="friend-card">Friend 1</div>
+          <div class="friend-card">Friend 2</div>
+          <div class="friend-card">Friend 3</div>
+        </div>
+      </div>
   </aside>
   
   <style>
-	.sidebar {
-	  width: 280px; /* Adjust width as needed */
-	  height: 100vh; /* Full viewport height */
-	  background-color: #ffffff;
-	  position: fixed;
-	  top: 0;
-	  right: 0;
-	  padding: 1rem;
-	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    .sidebar {
+      width: 280px; /* Adjust width as needed */
+      height: 100vh; /* Full viewport height */
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
     }
   
-	.sidebar ul {
-	  list-style: none;
-	  padding: 0;
-	}
+    .profile-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
   
-	.sidebar li {
-	  margin-bottom: 1rem;
-	}
+    .profile-image {
+      width: 40%; /* Adjust size as needed */
+      height: auto; /* Adjust size as needed */
+      border-radius: 50%; /* Makes the image a circle */
+      object-fit: cover; /* Ensures the image covers the circle area */
+      border: 2px solid #ffffff; /* Optional: Adds a white border */
+    }
   
-	.sidebar a {
-	  text-decoration: none;
-	  color: #333;
-	  font-size: 1rem;
-	  transition: color 0.3s;
-	}
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
   
-	.sidebar a:hover {
-	  color: #1478ee;
-	}
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+  
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+  
+    .sidebar a:hover {
+      color: #1478ee;
+    }
+
+    .username {
+    text-align: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    margin-top: 1rem; /* Adjust size as needed */
+    color: #000000; /* Font color */
+    font-weight: bold;
+  }
+
+  .info {
+    margin-top: 2rem; /* Adjust as needed */
+  }
+
+  .info-line {
+    font-size: 1.2rem;
+    margin-bottom: 1rem; /* Increased space between text and friend cards */
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .friends {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Ensure no padding is applied */
+    margin: 0; /* Ensure no margin is applied */
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .friend-card {
+    background-color: #ffffff;
+    padding: 1.1rem;
+    font-size: 1rem;
+    width: 100%; /* Makes each friend card take up the full width */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    margin-bottom: 0rem; /* Adds some space between friend cards */
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .friend-card:hover {
+    background-color: #eaeaea;
+  }
+
+  .friend-card.active {
+  background-color: #eaeaea;
+}
+
+.friends .friend-card:first-child {
+  border-top: 1px solid #eaeaea;
+}
+
   </style>
   

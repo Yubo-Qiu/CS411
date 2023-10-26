@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import FirebaseLogin from '../components/FirebaseLogin.jsx';
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
@@ -19,17 +18,14 @@ import Footer from '../components/Footer.astro'
         there's something here for everyone. Join us on this stellar journey bnbnbnbnbnbnbb
         bnbnbnbnbnbnbnbn bnbnbnn!
       </p>
-      <button class="blue-button">Let's Go 💫</button>
+      <a href="/dashboard" class="blue-button-link">
+        <button class="blue-button">Let's Go 💫</button>
+      </a>
     </section>
-
     <section class="full-width-image-section">
         <img src="/back.png" alt="Descriptive Image Text" />
     </section>
-
   </main>
-
-
-
   <Footer />
 </Layout>
 

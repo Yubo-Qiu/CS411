@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FirebaseLogin from '../components/FirebaseLogin.jsx';
+import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro'; // Import the Sidebar component
+import Userbar from '../components/Userbar.astro';
+---
+
+<Layout title="Daddy's Stock">
+  <div class="page-container">
+    <Sidebar /> <!-- Include the Sidebar component -->
+    <Userbar />
+    <main> 
+      <div class="info-rectangle">
+        <div class="info-section">
+            <div>Expected CGs:</div>
+            <div>Margin of Errors:</div>
+        </div>
+        <div class="info-section">
+            <div>Capital Gains:</div>
+            <div>Today's:</div>
+        </div>          
+        <div class="info-section"><span class="highlight">Position Size:</span></div>
+      </div>  
+      <div class="graph-rectangle">
+        <!-- Your graph content goes here -->
+      </div>
+      <div class="button-container">
+        <button class="action-button">Trade History</button>
+        <button class="action-button">Trade!</button>
+      </div>
+    </main>
+  </div>
+
+</Layout>
+
+<style>
+  /* CSS Reset */
+  body, h1, p, ul, li, div, main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .page-container {
+    display: flex;
+    min-height: 100vh; /* Use viewport height to ensure full coverage */
+    width: 100%;
+  }
+
+  /* Main Content Styles */
+  main {
+  background-color: #e6e6e6;
+  padding-left: 100px; /* Width of your left sidebar */
+  padding-right: 280px; /* Adjust based on the width of your left sidebar */
+  flex-grow: 1; /* Ensure main content takes the remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.graph-rectangle {
+  width: 90%; /* Adjust based on your preference */
+  height: 60%; /* Adjust based on your preference */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  border-radius: 25px; /* Optional: Rounds the corners */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Distribute space between buttons */
+  margin-top: 2%; /* Space between graph and buttons */
+  margin-bottom: 2%;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.action-button {
+  width: 48.5%; /* Adjust based on your preference */
+  padding: 1% 0; /* Vertical padding is 2% of the parent container's width */
+  color: #000000; /* Black text */
+  background-color: #ffffff; /* Same as graph rectangle */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Optional: Rounds the corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 28px; /* Adjust based on your preference */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text inside button */
+}
+
+
+.action-button:hover {
+  background-color: #acacac; /* Slightly darker color on hover */
+}
+
+.info-rectangle {
+  width: 90%; /* Same as graph-rectangle */
+  height: 20%; /* Adjust based on your preference */
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust based on your preference */
+  margin-bottom: 20px; /* Adjust based on your preference */
+  margin-top: 20px;
+}
+
+.info-section {
+  width: 32%; /* Adjust if needed */
+  text-align: left; /* Align text to the left */
+  font-size: 24px; /* Adjust based on your preference */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align content to the left */
+  line-height: 1.5; /* Adjust based on your preference */
+  overflow-wrap: break-word; /* Ensure long words don't overflow */
+  padding: 10px; /* Optional: add some padding inside the info-section */
+  position: relative;
+  font-weight: bold;
+  color: #1478ee;
+}
+
+
+.highlight {
+  color: #FFA500;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.info-section:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1%; /* Adjust as needed */
+  bottom: 1%; /* Adjust as needed */
+  width: 1px; /* Thickness of the split line */
+  background-color: #ccc; /* Color of the split line */
+}
+
+
+</style>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ui, uiConfig } from '../firebaseSetup';  // Adjust the path as needed
+import { ui, uiConfig } from '../firebaseConfig';  // Adjust the path as needed
 
 function FirebaseLogin() {
     const containerRef = useRef(null);

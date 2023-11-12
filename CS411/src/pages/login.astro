@@ -1,0 +1,152 @@
+---
+// Import statements for Layout and Navbar components
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import { signInWithGoogle } from '../firebaseAuth.js'; // Adjust this path if necessary
+// Note: You don't import the .jsx file in the frontmatter, just functions.
+---
+
+
+<Layout title="Login">
+    <Navbar />
+    <div class="form-wrapper">
+        <form method="POST" class="login-form" action="/dashboard">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-action">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+            <div class="google-sign-in">
+                <p>or sign in with:</p>
+                <div class="icon-container" id="googleSignInButton" > <!-- Changed for clarity -->
+                    <img src="google.jpg" alt="Sign in with Google" />
+                </div>
+            </div>
+        </form>
+        <button id="googleSignInButton">Login with Google</button>
+    </div>
+</Layout>
+
+<script type="module">
+    import { signInWithGoogle } from '../firebaseAuth.js';
+
+    document.getElementById('googleSignInButton')?.addEventListener('click', signInWithGoogle);
+</script>
+
+<!-- Add your style -->
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #fff url('/back.png') no-repeat center center fixed; 
+        background-size: cover;
+    }
+
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full height of the viewport */
+        padding: 0 20px; /* Padding on the sides */
+        background-color: rgba(255, 255, 255, 0.8); /* white with a bit of transparency */
+        backdrop-filter: blur(10px); /* Optional: only if you want a blur effect */
+    }
+
+    .login-form {
+        background: white; /* Changed to white as requested */
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px; /* Maximum width of the form */
+        box-sizing: border-box;
+        margin-top: -10%;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 0.5rem;
+    }
+
+    input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .form-action {
+        margin-top: 2rem;
+    }
+
+    .login-button {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+    .google-sign-in {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .google-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .google-logo {
+    width: 50px; /* Set a specific width for your logo */
+    height: auto; /* Height will scale automatically */
+    max-width: 100%; /* Max width is set to be responsive within the button */
+    transition: box-shadow 0.3s ease; /* Transition for smooth effect */
+    border-radius: 50%;
+    }
+
+    .google-button:hover .google-logo {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Shadow effect on hover */
+    }
+
+
+    .icon-container {
+        width: 50px; /* Fixed size */
+        height: 50px; /* Fixed size */
+        border-radius: 50%; /* Makes it round */
+        overflow: hidden; /* Hides the overflow to maintain the circle shape */
+        display: inline-flex; /* Allows the use of flexbox alignment */
+        justify-content: center; /* Centers image horizontally */
+        align-items: center; /* Centers image vertically */
+        cursor: pointer;
+        transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+        margin: 0 10px;
+    }
+
+    .icon-container img {
+        width: auto; /* Auto-width to maintain aspect ratio */
+        height: 100%; /* Set height to fill the container */
+    }
+
+    .icon-container:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Shadow on hover */
+    }
+
+       
+../../public/firebaseAuth.js

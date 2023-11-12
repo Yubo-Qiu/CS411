@@ -1,5 +1,5 @@
 // src/firebaseAuth.js
-import { auth, provider } from './firebaseConfig';
+import { auth, provider } from '../src./public/firebaseConfig';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
 

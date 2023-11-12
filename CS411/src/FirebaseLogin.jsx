@@ -1,14 +1,20 @@
-// src/components/FirebaseLogin.jsx
 import React from 'react';
-import { signInWithGoogle, signOutUser } from '../src/firebaseAuth';
+import { auth, provider } from 'firebaseConfig.js';
+import { signInWithPopup } from "firebase/auth";
 
-const FirebaseLogin = () => {
+const SignInWithGoogle = () => {
+  const handleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+    }
+  };
+
   return (
-    <div>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
-      <button onClick={signOutUser}>Sign out</button>
-    </div>
+    <button onClick={handleSignIn}>Sign in with Google</button>
   );
 };
 
-export default FirebaseLogin;
+export default SignInWithGoogle;
